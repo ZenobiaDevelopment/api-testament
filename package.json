@@ -1,0 +1,17 @@
+{
+  "name": "api-testament",
+  "version": "1.0.0",
+  "description": "Simple API, made with express and testament-cli.",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Zenobia Development",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "testament-cli": "^1.0.1"
+  }
+}

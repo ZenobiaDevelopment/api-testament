@@ -19,4 +19,4 @@ This repository is under GPL-3.0 License.
 
 # AUTHOR
 
-The author of this project is `trojanz07`
+The author of this project is `Zenobia Development`

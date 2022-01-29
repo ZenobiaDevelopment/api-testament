@@ -10,7 +10,7 @@ Simple API, made with express and testament-cli.
 
 1. `Install this repository.`
 2. `Edit the .env`
-3. `open terminal and run node .`
+3. `Open terminal and run node .`
 
 # LICENSE
 

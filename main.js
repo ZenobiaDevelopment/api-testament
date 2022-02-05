@@ -1,17 +1,21 @@
 import express from 'express';
-import web from './routes/listener.js'
-import error from './routes/error.js'
-import router from './routes/router.js'
-import dotenv from 'dotenv'
+import Listener from './routes/listener.js';
+import router from './routes/router.js';
+import testament from 'testament-cli';
+import dotenv from 'dotenv';
 
-dotenv.config()
+let web = new Listener();
+
+dotenv.config();
 
 let app = express();
 
 app.use(express.json());
 
-app.use('/', router)
+app.use('/', router);
 
-error.handle();
+web.once('ready', () => {
+    testament.animateSuccess('Listening on port ' + process.env.PORT);
+});
 
-web.listen(app, process.env.PORT)
+web.listen(app, process.env.PORT);

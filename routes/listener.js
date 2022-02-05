@@ -1,17 +1,18 @@
-import testament from 'testament-cli';
+import testament from "testament-cli";
+import EventEmitter from 'events';
 
-export function listen(app, PORT) {
-    app.listen(PORT, () => {
-        testament.animateSuccess('Listening on port ' + PORT);
-    })
+class Listener extends EventEmitter {
+    listen(app, PORT) {
+        app.listen(PORT, () => {
+            this.emit('ready')
+        })
 
-    app.on("error", (err) => {
-        testament.animateFail('Something went wrong.');
-    })
+        app.on("error", (err) => {
+            testament.animateFail('Something went wrong.');
+        })
+    }
 }
 
-let web = {
-    listen
-}
 
-export default web;
+
+export default Listener;
